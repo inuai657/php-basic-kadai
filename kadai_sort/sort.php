@@ -7,25 +7,25 @@
 </head>
 
 <body>
-  <p>昇順にソートします。<br>
+  <p>
     <?php
-    $nums = [15, 4, 18, 23, 10 ];
-    
-    function output_number($nums) {
-      foreach ($nums as $num) {
+    $nums = [15, 4, 18, 23, 10];
+
+    function sort_2way($array, $order) {
+      if ($order === true) {
+        echo '昇順にソートします。'. '<br>';
+        asort($array);
+      } else {
+        echo '降順にソートします。'. '<br>';
+        arsort($array);
+      }
+      foreach ($array as $num ) {
         echo $num . '<br>';
       }
     }
 
-    sort($nums);
-    output_number($nums);
-    ?>
-  </p>
-
-  <p>降順にソートします。<br>
-    <?php
-    rsort($nums);
-    output_number($nums);
+    sort_2way($nums, true);
+    sort_2way($nums, false);
     ?>
   </p>
 </body>
